@@ -15,13 +15,15 @@
             const m = Math.floor(elapsed / (1000*60)) % 60;
             const h = Math.floor(elapsed /(1000*60*60));
             
-            const msStr = ms.toString().padStart(1, '0');
+            //訂正箇所
+            const msStr = ms.toString().padStart(1, "0").slice(0,1);
             const sStr = s.toString().padStart(1, '0');
             const mStr = m.toString().padStart(1, '0');
             const hStr = h.toString().padStart(1, '0');
             
             timeElement.innerHTML = `${hStr}:${mStr}:${sStr}:${msStr}`;
           }
+          
           
           start.addEventListener('click', function(e) {
             if(intervalId !== null) { return; }
@@ -30,8 +32,9 @@
               let now = new Date();
               elapsed += now - pre;
               pre = now;
-              updateTime();
-            },1000);
+              updateTime()
+              //訂正箇所
+            },100);
           });
           
           stop.addEventListener('click', function(e) {

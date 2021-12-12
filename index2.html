@@ -10,10 +10,10 @@
       
       <body>
         <h3>ストップウォッチ</h3>
-        <div class= "time"  id="time">0:0:0.0</div>
+        <div class= "time"  id="time">0:0:0:0</div>
         <div>
-          <input id="start" type="button" value="スタート">
-          <input id="stop" type="button" value="ストップ">
+          <input id="start" type="button" value="スタート" onclick="disabled = true;">
+          <input id="stop" type="button" value="ストップ"onclick="getElementById('start').disabled = false;">
           <input id="reset" type="button" value="リセット">
           
         </div>
